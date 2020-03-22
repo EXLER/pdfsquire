@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+
     @Override
     public void init() throws Exception {
         System.out.println("[!] Initializing PDFsquire...");
@@ -14,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("pdfsquire.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("pdfsquire.fxml"));
         Parent root = loader.load();
 
         Controller controller = loader.getController();

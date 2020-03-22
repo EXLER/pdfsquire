@@ -17,4 +17,8 @@ public class Controller {
         fileChooser.setTitle("Open PDF file");
         fileChooser.showOpenDialog(this.stage);
     }
+
+    public void exitApplication(ActionEvent actionEvent) {
+        this.stage.close();
+    }
 }
