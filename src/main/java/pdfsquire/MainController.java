@@ -1,7 +1,6 @@
 package pdfsquire;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
@@ -13,11 +12,13 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
 
 public class MainController {
     private Stage primaryStage;
+    private final Stage dialogStage = new Stage();
     private Scene dialogScene;
     private DialogController dialogController;
 
@@ -35,17 +36,20 @@ public class MainController {
 
     public void initController(Stage stage) throws IOException {
         this.primaryStage = stage;
-        this.buttons = new Button[] {rotateLeftButton, rotateRightButton, mergeButton, splitButton, extractButton};
+        this.buttons = new Button[]{rotateLeftButton, rotateRightButton, mergeButton, splitButton, extractButton};
+
+        dialogStage.initModality(Modality.APPLICATION_MODAL);
+        dialogStage.initOwner(primaryStage);
 
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/dialog.fxml"));
         this.dialogScene = new Scene(loader.load(), 190, 80);
 
         this.dialogController = loader.getController();
+
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF", "*.pdf"));
     }
 
     public void openFile(ActionEvent actionEvent) throws IOException {
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF", "*.pdf"));
-
         currentFile = fileChooser.showOpenDialog(this.primaryStage);
         if (currentFile != null) {
             this.primaryStage.setTitle("PDFsquire - " + currentFile.getName());
@@ -60,8 +64,8 @@ public class MainController {
     }
 
     public void splitFile(ActionEvent actionEvent) {
-        this.dialogController.initDialog(DialogStates.SPLIT);
-        LayoutManipulation.showDialogWindow(this.primaryStage, this.dialogScene, "Split file");
+        this.dialogController.initDialog(this.dialogStage, currentFile, DialogActions.SPLIT);
+        LayoutManipulation.showDialogWindow(this.dialogStage, this.dialogScene, "Split file");
     }
 
     public void mergeFile(ActionEvent actionEvent) throws IOException {
@@ -83,7 +87,8 @@ public class MainController {
     }
 
     public void extractFile(ActionEvent actionEvent) {
-        LayoutManipulation.showDialogWindow(this.primaryStage, this.dialogScene, "Extract pages");
+        this.dialogController.initDialog(this.dialogStage, currentFile, DialogActions.EXTRACT);
+        LayoutManipulation.showDialogWindow(this.dialogStage, this.dialogScene, "Extract pages");
     }
 
     public void rotateFileLeft(ActionEvent actionEvent) {
@@ -92,9 +97,5 @@ public class MainController {
 
     public void rotateFileRight(ActionEvent actionEvent) {
         System.out.println("[!] Rotated right.");
-    }
-
-    public void exitApplication(ActionEvent actionEvent) {
-        this.primaryStage.close();
     }
 }

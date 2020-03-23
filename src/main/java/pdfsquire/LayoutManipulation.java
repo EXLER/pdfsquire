@@ -42,12 +42,7 @@ public class LayoutManipulation {
         );
     }
 
-    static public void showDialogWindow(Stage parent, Scene root, String windowTitle) {
-        final Stage dialog = new Stage();
-
-        dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.initOwner(parent);
-
+    static public void showDialogWindow(Stage dialog, Scene root, String windowTitle) {
         dialog.setTitle(windowTitle);
         dialog.setScene(root);
         dialog.show();

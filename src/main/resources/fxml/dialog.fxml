@@ -23,12 +23,12 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <TextField fx:id="textField" prefHeight="26.0" prefWidth="58.0">
+            <TextField fx:id="textField" prefHeight="26.0" prefWidth="58.0" promptText="e.g. 2-5">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </TextField>
-            <Button fx:id="confirmButton" mnemonicParsing="false" text="Confirm">
+            <Button mnemonicParsing="false" onAction="#dialogAction" text="OK">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>

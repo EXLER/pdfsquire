@@ -28,3 +28,7 @@
 .extract {
     -fx-background-image: url('extract.png');
 }
+
+.open {
+    -fx-background-image: url('open.png');
+}
