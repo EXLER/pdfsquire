@@ -1,0 +1,30 @@
+.button {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+    -fx-background-size: 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.button:hover {
+    -fx-background-color: #f5deb3;
+}
+
+.rotate-left {
+    -fx-background-image: url('rotate-left.png');
+}
+
+.rotate-right {
+    -fx-background-image: url('rotate-right.png');
+}
+
+.merge {
+    -fx-background-image: url('merge.png');
+}
+
+.split {
+    -fx-background-image: url('split.png');
+}
+
+.extract {
+    -fx-background-image: url('extract.png');
+}

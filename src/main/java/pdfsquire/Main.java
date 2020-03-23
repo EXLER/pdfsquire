@@ -15,14 +15,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("pdfsquire.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/pdfsquire.fxml"));
         Parent root = loader.load();
 
         Controller controller = loader.getController();
-        controller.setStage(primaryStage);
+        controller.initController(primaryStage);
 
         primaryStage.setTitle("PDFsquire");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 400, 300));
         primaryStage.show();
     }
 
