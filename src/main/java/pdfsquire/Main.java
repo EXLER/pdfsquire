@@ -4,15 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
-    @Override
-    public void init() throws Exception {
-        System.out.println("[!] Initializing PDFsquire...");
-    }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/pdfsquire.fxml"));
@@ -23,12 +18,8 @@ public class Main extends Application {
 
         primaryStage.setTitle("PDFsquire");
         primaryStage.setScene(new Scene(root, 400, 300));
+        primaryStage.getIcons().add(new Image("icon.png"));
         primaryStage.show();
-    }
-
-    @Override
-    public void stop() throws Exception {
-        System.out.println("[!] Stopping PDFsquire...");
     }
 
     public static void main(String[] args) {
