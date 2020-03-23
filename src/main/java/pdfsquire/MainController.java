@@ -64,7 +64,7 @@ public class MainController {
     }
 
     public void splitFile(ActionEvent actionEvent) {
-        this.dialogController.initDialog(this.dialogStage, currentFile, DialogActions.SPLIT);
+        this.dialogController.initDialog(this.dialogStage, flashText, currentFile, DialogActions.SPLIT);
         LayoutManipulation.showDialogWindow(this.dialogStage, this.dialogScene, "Split file");
     }
 
@@ -83,19 +83,21 @@ public class MainController {
         pdfMerger.setDestinationFileName(f.getAbsolutePath());
         pdfMerger.mergeDocuments(null);
 
-        LayoutManipulation.flashInfoText(flashText, "Merged file saved as: " + f.getName());
+        LayoutManipulation.flashInfoText(flashText, "File saved as: " + f.getName());
     }
 
     public void extractFile(ActionEvent actionEvent) {
-        this.dialogController.initDialog(this.dialogStage, currentFile, DialogActions.EXTRACT);
+        this.dialogController.initDialog(this.dialogStage, flashText, currentFile, DialogActions.EXTRACT);
         LayoutManipulation.showDialogWindow(this.dialogStage, this.dialogScene, "Extract pages");
     }
 
     public void rotateFileLeft(ActionEvent actionEvent) {
-        System.out.println("[!] Rotated left.");
+        this.dialogController.initDialog(this.dialogStage, flashText, currentFile, DialogActions.ROTATE_LEFT);
+        LayoutManipulation.showDialogWindow(this.dialogStage, this.dialogScene, "Rotate pages left");
     }
 
     public void rotateFileRight(ActionEvent actionEvent) {
-        System.out.println("[!] Rotated right.");
+        this.dialogController.initDialog(this.dialogStage, flashText, currentFile, DialogActions.ROTATE_RIGHT);
+        LayoutManipulation.showDialogWindow(this.dialogStage, this.dialogScene, "Rotate pages right");
     }
 }

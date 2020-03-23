@@ -14,12 +14,12 @@ public enum DialogActions {
     }, ROTATE_LEFT {
         @Override
         public String toString() {
-            return "Page number";
+            return "Page range";
         }
     }, ROTATE_RIGHT {
         @Override
         public String toString() {
-            return "Page number";
+            return "Page range";
         }
     }
 }
