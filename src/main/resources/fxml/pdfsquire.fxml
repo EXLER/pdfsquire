@@ -16,9 +16,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfsquire.Controller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pdfsquire.MainController">
    <children>
-      <MenuBar prefHeight="44.0" prefWidth="600.0">
+      <MenuBar prefHeight="21.0" prefWidth="400.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -47,7 +47,7 @@
                   <String fx:value="button" />
                </styleClass>
                <tooltip>
-                  <Tooltip text="Extract pages" />
+                  <Tooltip text="Extract text from pages" />
                </tooltip>
             </Button>
             <Separator layoutX="199.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="6.0" minHeight="-Infinity" minWidth="6.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="6.0" />
@@ -86,10 +86,9 @@
                <tooltip>
                   <Tooltip text="Rotate page" />
                </tooltip></Button>
-            <Separator maxHeight="-Infinity" maxWidth="6.0" minHeight="-Infinity" minWidth="6.0" orientation="VERTICAL" prefHeight="36.0" prefWidth="6.0" />
         </buttons>
       </ButtonBar>
-      <Pane prefHeight="214.0" prefWidth="400.0">
+      <Pane prefHeight="237.0" prefWidth="400.0">
          <children>
             <ImageView fx:id="pdfImageView" fitHeight="158.0" fitWidth="231.0" layoutX="86.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -101,6 +100,7 @@
                   <Font size="16.0" />
                </font>
             </Text>
+            <Text fx:id="flashText" layoutX="49.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flash message" textAlignment="CENTER" visible="false" wrappingWidth="302.0" />
          </children>
       </Pane>
    </children>

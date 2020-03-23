@@ -18,8 +18,8 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/pdfsquire.fxml"));
         Parent root = loader.load();
 
-        Controller controller = loader.getController();
-        controller.initController(primaryStage);
+        MainController mainController = loader.getController();
+        mainController.initController(primaryStage);
 
         primaryStage.setTitle("PDFsquire");
         primaryStage.setScene(new Scene(root, 400, 300));
