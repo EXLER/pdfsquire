@@ -22,7 +22,7 @@ $ mvn install
 Download [JavaFX](https://gluonhq.com/products/javafx/) and use the command below to run the program.
 
 ```bash
-$ java --module-path /path/to/javafx/lib --add-modules=javafx.controls --add-modules=javafx.fxml -jar /path/to/jar
+$ java --module-path /path/to/javafx/lib --add-modules javafx.controls,javafx.fxml -jar /path/to/jar
 ```
 
 ## License
