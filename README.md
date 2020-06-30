@@ -1,6 +1,6 @@
 <p align="center">
     <img src="logo.png" width="160">
-    <p align="center">Extract, merge, split and rotate PDF files without hassle.</p>
+    <p align="center">Extract text, merge, split and rotate PDF files without hassle.</p>
 </p>
 
 <p align="center">
