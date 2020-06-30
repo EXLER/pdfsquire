@@ -12,9 +12,12 @@
 ## Requirements
 * Java Development Kit 11
 
-Development dependencies are in `pom.xml`. Use Maven to install:
 ```bash
-$ mvn install 
+# Build and run only
+$ mvn javafx:run
+
+# Create JAR in 'target/' directory
+$ mvn install
 ```
 
 ## Usage

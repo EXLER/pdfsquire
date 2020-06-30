@@ -51,7 +51,7 @@ public class DialogController {
             end = Integer.parseInt(userInput[1]);
         }
 
-        if (document.getNumberOfPages() > end) {
+        if (start < 1 || document.getNumberOfPages() + 1 > end) {
             if (this.action == DialogActions.EXTRACT) {
                 fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text file", "*.txt"));
 
@@ -94,6 +94,10 @@ public class DialogController {
                 document.save(saveFile.getAbsolutePath());
                 document.close();
             }
+        }
+        else {
+            LayoutManipulation.flashInfoText(this.flashText, "Invalid page number given.");
+            return;
         }
 
         if (saveFile != null) {
